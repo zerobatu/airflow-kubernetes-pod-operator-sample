@@ -21,7 +21,7 @@ dag = DAG(
 start = DummyOperator(task_id='start', dag=dag)
 
 passing = KubernetesPodOperator(namespace='airflow',
-                          image="python:3.6",
+                          image="python:3.7-slim-buster",
                           cmds=["python","-c"],
                           arguments=["print('hello world')"],
                           labels={"foo": "bar"},
